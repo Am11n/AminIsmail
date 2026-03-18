@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const projects = [
-  { id: 1, title: "Ethereal UI", category: "Design System", href: "#" },
-  { id: 2, title: "Velocity", category: "WebGL Experience", href: "#" },
-  { id: 3, title: "Lumina", category: "E-Commerce", href: "#" },
-  { id: 4, title: "Nexus", category: "Portfolio", href: "#" }
+  { id: 1, title: "TeqBook", category: "SaaS Platform", href: "https://www.teqbook.com" },
+  { id: 2, title: "DocsAI", category: "AI Automation", href: "https://github.com/Am11n/DocsAI" },
+  { id: 3, title: "Digiskjema", category: "Web Application", href: "https://github.com/Am11n/digiskjema" },
+  { id: 4, title: "Saudi Real Estate", category: "Real Estate Platform", href: "https://github.com/Am11n/saudi-real-estate-main" }
 ];
 
 export default function Projects() {
