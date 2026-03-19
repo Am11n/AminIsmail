@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 const certificates = [
   {
     id: 1,
-    title: "NSM grunnprinsipper for IKT-sikkerhet",
-    issuer: "Nasjonal sikkerhetsmyndighet (NSM)",
-    date: "Oktober 2022",
-    description: "Sikkerhetsmåneden 2022 - Grunnleggende IT-sikkerhetspraksiser.",
+    title: "NSM Fundamental Principles for ICT Security",
+    issuer: "National Security Authority (NSM)",
+    date: "October 2022",
+    description: "Security Month 2022 - Basic IT security practices.",
     href: "/certificates/NSM-IT-SIKKERHET.pdf"
   },
   {
     id: 2,
     title: "Introduction to DevOps Course",
     issuer: "Tech Education",
-    date: "Oktober 2023",
+    date: "October 2023",
     description: "Successfully completed all course material in the Introduction to DevOps Course.",
     href: "/certificates/DevOps-Sertifikasjon.pdf"
   }
@@ -32,9 +32,9 @@ export default function Certificates() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-6xl font-medium mb-4">Sertifiseringer</h2>
+          <h2 className="text-4xl md:text-6xl font-medium mb-4">Certifications</h2>
           <p className="text-white/60 text-lg md:text-xl max-w-xl">
-            Kontinuerlig læring innen IT-sikkerhet og DevOps.
+            Continuous learning in IT security and DevOps.
           </p>
         </motion.div>
 

@@ -5,40 +5,40 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     id: 1,
-    role: "Utvikler",
+    role: "Developer",
     company: "XALA TECHNOLOGIES",
-    period: "05/2025 – Nå",
+    period: "05/2025 – Present",
     location: "Asker",
     description: [
-      "Deltok i tekniske valg og kodegjennomganger.",
-      "Jobbet med skybaserte tjenester, API-er og integrasjoner mot databaser og tredjepartssystemer.",
-      "Brukt AI verktøy for å løse komplekse oppgaver.",
-      "Involvert i testing, kravanalyse og systemdesign."
+      "Participated in technical decisions and code reviews.",
+      "Worked with cloud-based services, APIs, and integrations with databases and third-party systems.",
+      "Used AI tools to solve complex tasks.",
+      "Involved in testing, requirements analysis, and system design."
     ]
   },
   {
     id: 2,
-    role: "System Konsulent",
+    role: "System Consultant",
     company: "QUESTBACK",
     period: "12/2023 – 03/2024",
     location: "Oslo",
     description: [
-      "Overvåket ytelse og tilgjengelighet på datasystemer og nettverk for å sikre stabil drift.",
-      "Håndterte brukerstøtte og løste IT-relaterte problemer og henvendelser.",
-      "Bidro til installasjon, konfigurasjon og vedlikehold av servere, nettverksenheter og infrastruktur.",
-      "Implementerte grunnleggende sikkerhetspraksiser og driftssikkerhet via patching."
+      "Monitored performance and availability of data systems and networks to ensure stable operations.",
+      "Handled user support and resolved IT-related problems and inquiries.",
+      "Contributed to the installation, configuration, and maintenance of servers, network devices, and infrastructure.",
+      "Implemented basic security practices and operational reliability via patching."
     ]
   },
   {
     id: 3,
-    role: "Applikasjon Analytiker",
+    role: "Application Analyst",
     company: "CENTIFIC",
     period: "01/2023 – 11/2024",
     location: "Remote",
     description: [
-      "Testet og optimaliserte interne systemer for ytelse og sikkerhet.",
-      "Bidro til utvikling og vedlikehold av backend-funksjoner.",
-      "Deltok i dokumentasjon og forbedring av utviklingsprosesser."
+      "Tested and optimized internal systems for performance and security.",
+      "Contributed to the development and maintenance of backend features.",
+      "Participated in the documentation and improvement of development processes."
     ]
   }
 ];
@@ -54,9 +54,9 @@ export default function Experience() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-6xl font-medium mb-4">Erfaring</h2>
+          <h2 className="text-4xl md:text-6xl font-medium mb-4">Experience</h2>
           <p className="text-white/60 text-lg md:text-xl max-w-xl">
-            Min profesjonelle reise innen programvareutvikling, systemarkitektur og drift.
+            My professional journey in software development, system architecture, and operations.
           </p>
         </motion.div>
 

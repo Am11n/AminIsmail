@@ -45,9 +45,9 @@ export default function Skills() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-16 md:mb-24 text-center md:text-left"
         >
-          <h2 className="text-4xl md:text-6xl font-medium mb-4">Teknologier & Ferdigheter</h2>
+          <h2 className="text-4xl md:text-6xl font-medium mb-4">Skills & Technologies</h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto md:mx-0">
-            Et utvalg av verktøyene og teknologiene jeg bruker for å bygge skalerbare og brukervennlige løsninger.
+            A selection of the tools and technologies I use to build scalable and user-friendly solutions.
           </p>
         </motion.div>
 
