@@ -1,8 +1,9 @@
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
 import Certificates from "@/components/Certificates";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -15,6 +16,7 @@ export default function Home() {
       
       <Skills />
       <Experience />
+      <Education />
       <Certificates />
       <Projects />
       

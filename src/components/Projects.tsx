@@ -6,7 +6,7 @@ const projects = [
   { id: 1, title: "TeqBook", category: "SaaS Platform", href: "https://www.teqbook.com", isReleased: true },
   { id: 2, title: "DocsAI", category: "AI Automation", href: "https://github.com/Am11n/DocsAI" },
   { id: 3, title: "Digiskjema", category: "Web Application", href: "https://github.com/Am11n/digiskjema" },
-  { id: 4, title: "Saudi Real Estate", category: "Real Estate Platform", href: "https://github.com/Am11n/saudi-real-estate-main" }
+  { id: 4, title: "Digilist", category: "Web Application", href: "https://www.digilist.no", isReleased: true }
 ];
 
 export default function Projects() {
