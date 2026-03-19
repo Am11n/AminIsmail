@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const projects = [
-  { id: 1, title: "TeqBook", category: "SaaS Platform", href: "https://www.teqbook.com" },
+  { id: 1, title: "TeqBook", category: "SaaS Platform", href: "https://www.teqbook.com", isReleased: true },
   { id: 2, title: "DocsAI", category: "AI Automation", href: "https://github.com/Am11n/DocsAI" },
   { id: 3, title: "Digiskjema", category: "Web Application", href: "https://github.com/Am11n/digiskjema" },
   { id: 4, title: "Saudi Real Estate", category: "Real Estate Platform", href: "https://github.com/Am11n/saudi-real-estate-main" }
@@ -55,7 +55,14 @@ export default function Projects() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_100px_rgba(255,255,255,0.05)] pointer-events-none" />
               
               <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white/50 text-sm mb-2 font-mono uppercase tracking-widest">{project.category}</p>
+                <div className="flex items-center gap-3 mb-2">
+                  <p className="text-white/50 text-sm font-mono uppercase tracking-widest">{project.category}</p>
+                  {project.isReleased && (
+                    <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full flex items-center justify-center translate-y-[-1px]">
+                      Live
+                    </span>
+                  )}
+                </div>
                 <h3 className="text-3xl font-medium">{project.title}</h3>
               </div>
 
