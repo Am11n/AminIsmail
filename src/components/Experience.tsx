@@ -48,7 +48,7 @@ export default function Experience() {
     <section className="relative bg-black text-white py-32 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -64,7 +64,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, x: -30 }}
+              initial={false}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

@@ -92,7 +92,7 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -120,7 +120,7 @@ export default function Projects() {
               href={project.href}
               key={project.id}
               aria-label={`${project.title}. ${project.description}`}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

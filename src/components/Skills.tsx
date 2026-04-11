@@ -39,7 +39,7 @@ export default function Skills() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,7 +55,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.05 }}

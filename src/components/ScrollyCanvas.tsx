@@ -15,6 +15,8 @@ export function useHeroScrollProgress() {
 
 const FRAME_COUNT = 120;
 
+const publicPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function ScrollyCanvas({ children }: { children?: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -34,7 +36,7 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
     for (let i = 0; i < FRAME_COUNT; i++) {
         const img = new Image();
         const paddedIndex = i.toString().padStart(3, '0');
-        img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
+        img.src = `${publicPrefix}/sequence/frame_${paddedIndex}_delay-0.066s.png`;
         
         img.onload = () => {
           loadedCount++;
@@ -87,9 +89,9 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
         drawImage(Math.max(0, Math.min(FRAME_COUNT - 1, frameIndex.get())));
       }
     };
-    
+
     window.addEventListener("resize", handleResize);
-    handleResize(); // Initial setup
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, [drawImage, frameIndex]);
@@ -108,7 +110,15 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
   return (
     <div ref={containerRef} className="relative h-[500vh] w-full bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full block" />
+        {/* Synlig når canvas ikke tegnes (f.eks. JS feiler / feil sti til frames) */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-black bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${publicPrefix}/sequence/frame_000_delay-0.066s.png)`,
+          }}
+          aria-hidden
+        />
+        <canvas ref={canvasRef} className="absolute inset-0 z-[1] h-full w-full block" />
         {/* Overlay must read the same scroll progress as the frame sequence (this container, not the document). */}
         <HeroScrollProgressContext.Provider value={scrollYProgress}>
           {children}

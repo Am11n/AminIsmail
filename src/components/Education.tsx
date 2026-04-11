@@ -24,7 +24,7 @@ export default function Education() {
     <section className="relative bg-black text-white py-32 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -40,7 +40,7 @@ export default function Education() {
           {education.map((edu, index) => (
             <motion.div
               key={edu.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

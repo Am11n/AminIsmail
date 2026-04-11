@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const certificates = [
   {
     id: 1,
@@ -9,7 +11,7 @@ const certificates = [
     issuer: "National Security Authority (NSM)",
     date: "October 2022",
     description: "Security Month 2022 - Basic IT security practices.",
-    href: "/certificates/NSM-IT-SIKKERHET.pdf"
+    href: `${base}/certificates/NSM-IT-SIKKERHET.pdf`,
   },
   {
     id: 2,
@@ -17,8 +19,8 @@ const certificates = [
     issuer: "Tech Education",
     date: "October 2023",
     description: "Successfully completed all course material in the Introduction to DevOps Course.",
-    href: "/certificates/DevOps-Sertifikasjon.pdf"
-  }
+    href: `${base}/certificates/DevOps-Sertifikasjon.pdf`,
+  },
 ];
 
 export default function Certificates() {
@@ -26,7 +28,7 @@ export default function Certificates() {
     <section className="relative bg-black text-white py-32 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,7 +47,7 @@ export default function Certificates() {
               href={cert.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
