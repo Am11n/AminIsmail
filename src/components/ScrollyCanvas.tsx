@@ -1,7 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
-import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { createContext, useContext, useEffect, useRef, useState, useCallback } from "react";
+import { MotionValue, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+
+export const HeroScrollProgressContext = createContext<MotionValue<number> | null>(null);
+
+export function useHeroScrollProgress() {
+  const progress = useContext(HeroScrollProgressContext);
+  if (!progress) {
+    throw new Error("useHeroScrollProgress must be used within ScrollyCanvas");
+  }
+  return progress;
+}
 
 const FRAME_COUNT = 120;
 
@@ -99,8 +109,10 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
     <div ref={containerRef} className="relative h-[500vh] w-full bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full block" />
-        {/* Overlay content can be rendered here to ensure it's sticky along with the canvas */}
-        {children}
+        {/* Overlay must read the same scroll progress as the frame sequence (this container, not the document). */}
+        <HeroScrollProgressContext.Provider value={scrollYProgress}>
+          {children}
+        </HeroScrollProgressContext.Provider>
       </div>
     </div>
   );

@@ -2,11 +2,85 @@
 
 import { motion } from "framer-motion";
 
-const projects = [
-  { id: 1, title: "TeqBook", category: "SaaS Platform", href: "https://www.teqbook.com", isReleased: true },
-  { id: 2, title: "DocsAI", category: "AI Automation", href: "https://github.com/Am11n/DocsAI" },
-  { id: 3, title: "Digiskjema", category: "Web Application", href: "https://github.com/Am11n/digiskjema" },
-  { id: 4, title: "Digilist", category: "Web Application", href: "https://www.digilist.no", isReleased: true }
+type Project = {
+  id: number;
+  title: string;
+  category: string;
+  href: string;
+  description: string;
+  tech: string[];
+  isReleased?: boolean;
+};
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "TeqBook",
+    category: "SaaS Platform",
+    href: "https://www.teqbook.com",
+    isReleased: true,
+    description:
+      "Multi-tenant booking-SaaS for salonger: pnpm-monorepo med tre Next.js-apper (public, dashboard, admin), Supabase med RLS, Stripe, 2FA og rate limiting, 15 språk, Vitest og Playwright.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "Supabase",
+      "Stripe",
+      "pnpm",
+      "Vitest",
+      "Playwright",
+    ],
+  },
+  {
+    id: 2,
+    title: "DocsAI",
+    category: "AI Automation",
+    href: "https://github.com/Am11n/DocsAI",
+    description:
+      "MVP for AI-drevet dokumentautomatisering: opplasting via kø, PDF-tekst og embeddings, pgvector-søk og chat med kilder. Next.js, FastAPI + Celery, Redis og Supabase/Postgres.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Celery",
+      "Redis",
+      "Supabase",
+      "PostgreSQL",
+      "pgvector",
+    ],
+  },
+  {
+    id: 3,
+    title: "Rønningen Selskapslokale",
+    category: "Website",
+    href: "https://www.ronningenselskapslokale.no",
+    isReleased: true,
+    description:
+      "Nettside for selskapslokale: Vite, React og TypeScript med React Router. Kontaktforespørsler i Supabase og e-post via Web3Forms eller FormSubmit, deploy på Vercel.",
+    tech: ["Vite", "React", "TypeScript", "React Router", "Supabase"],
+  },
+  {
+    id: 4,
+    title: "Digilist",
+    category: "Web Application",
+    href: "https://www.digilist.no",
+    isReleased: true,
+    description:
+      "Multi-tenant Backend-as-a-Service bygget på Convex: tenant-isolasjon, RBAC, booking og ressursstyring, fakturering og compliance — konsumert av seks React-apper via et delt SDK.",
+    tech: [
+      "Convex",
+      "React",
+      "TypeScript",
+      "pnpm",
+      "Vitest & Playwright",
+      "i18next",
+      "Digdir / @xala/ds",
+    ],
+  },
 ];
 
 export default function Projects() {
@@ -17,7 +91,7 @@ export default function Projects() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -30,7 +104,7 @@ export default function Projects() {
               A collection of digital experiences that blend aesthetic design with performant engineering.
             </p>
           </div>
-          
+
           {/* A NanoBanana cheeky detail */}
           <div className="hidden md:flex items-center gap-2 group cursor-pointer text-white/30 hover:text-yellow-400 transition-colors duration-300">
             <span className="text-sm font-mono tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">nano banana mode</span>
@@ -45,6 +119,7 @@ export default function Projects() {
             <motion.a
               href={project.href}
               key={project.id}
+              aria-label={`${project.title}. ${project.description}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -53,9 +128,9 @@ export default function Projects() {
             >
               {/* Subtle hover glow ring */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_100px_rgba(255,255,255,0.05)] pointer-events-none" />
-              
-              <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="flex items-center gap-3 mb-2">
+
+              <div className="relative z-10 min-h-0 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="flex items-center gap-3 mb-2 shrink-0">
                   <p className="text-white/50 text-sm font-mono uppercase tracking-widest">{project.category}</p>
                   {project.isReleased && (
                     <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full flex items-center justify-center translate-y-[-1px]">
@@ -63,7 +138,25 @@ export default function Projects() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-3xl font-medium">{project.title}</h3>
+                <h3 className="text-3xl font-medium shrink-0">{project.title}</h3>
+
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="pt-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-75">
+                      <p className="text-sm text-white/70 leading-relaxed line-clamp-3 mb-3">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wide text-white/80 bg-white/5 border border-white/15 rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Arrow icon that animates in */}

@@ -1,21 +1,23 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
+import { useHeroScrollProgress } from "./ScrollyCanvas";
 
 export default function Overlay() {
-  const { scrollYProgress } = useScroll();
+  const scrollYProgress = useHeroScrollProgress();
 
-  // 0% -> "Amin Ismail. Software Developer." (center)
-  const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 1, 0]);
-  const y1 = useTransform(scrollYProgress, [0, 0.25], [0, -50]);
+  // Same 0–1 timeline as ScrollyCanvas; ranges are sequential so only one line is visible at a time.
+  // 1: "Amin Ismail" (center)
+  const opacity1 = useTransform(scrollYProgress, [0, 0.22, 0.3], [1, 1, 0]);
+  const y1 = useTransform(scrollYProgress, [0, 0.3], [0, -40]);
 
-  // 30% -> "I build digital experiences." (left)
-  const opacity2 = useTransform(scrollYProgress, [0.2, 0.3, 0.45, 0.55], [0, 1, 1, 0]);
-  const y2 = useTransform(scrollYProgress, [0.2, 0.3, 0.55], [50, 0, -50]);
+  // 2: "I build digital experiences." (left)
+  const opacity2 = useTransform(scrollYProgress, [0.3, 0.34, 0.52, 0.58], [0, 1, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.3, 0.34, 0.58], [36, 0, -36]);
 
-  // 60% -> "Bridging design and engineering." (right)
-  const opacity3 = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [0, 1, 1, 0]);
-  const y3 = useTransform(scrollYProgress, [0.5, 0.6, 0.9], [50, 0, -50]);
+  // 3: "Bridging design and engineering." (right)
+  const opacity3 = useTransform(scrollYProgress, [0.58, 0.62, 0.86, 0.92], [0, 1, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.58, 0.62, 0.92], [36, 0, -36]);
 
   return (
     <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-center text-white p-8 md:p-24 overflow-hidden">
@@ -25,7 +27,7 @@ export default function Overlay() {
         className="absolute inset-0 flex items-center justify-center text-center"
       >
         <h1 className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 drop-shadow-lg">
-          Amin Ismail.<br />
+          Amin Ismail<br />
           <span className="text-2xl md:text-4xl font-light text-white/80">Software Developer</span>
         </h1>
       </motion.div>
