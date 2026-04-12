@@ -8,7 +8,7 @@ const experiences = [
     role: "Developer",
     company: "XALA TECHNOLOGIES",
     period: "05/2025 – Present",
-    location: "Asker",
+    location: "Nesbru",
     description: [
       "Participated in technical decisions and code reviews.",
       "Worked with cloud-based services, APIs, and integrations with databases and third-party systems.",
