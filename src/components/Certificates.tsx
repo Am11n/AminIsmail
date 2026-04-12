@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const base = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
 
 const certificates = [
   {

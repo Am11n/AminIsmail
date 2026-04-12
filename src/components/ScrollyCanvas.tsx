@@ -15,7 +15,7 @@ export function useHeroScrollProgress() {
 
 const FRAME_COUNT = 120;
 
-const publicPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const publicPrefix = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
 
 export default function ScrollyCanvas({ children }: { children?: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);

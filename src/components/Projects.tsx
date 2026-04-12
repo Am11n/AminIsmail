@@ -66,7 +66,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Digilist",
-    category: "Web Application",
+    category: "SaaS Platform",
     href: "https://www.digilist.no",
     isReleased: true,
     description:
