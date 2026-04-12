@@ -45,14 +45,14 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="relative bg-black text-white py-32 px-8 border-t border-white/5">
+    <section className="relative bg-black text-white pt-20 pb-12 md:pt-24 md:pb-16 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-16 md:mb-24"
+          className="mb-10 md:mb-14"
         >
           <h2 className="text-4xl md:text-6xl font-medium mb-4">Experience</h2>
           <p className="text-white/60 text-lg md:text-xl max-w-xl">
@@ -60,7 +60,7 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}

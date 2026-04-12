@@ -85,7 +85,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section className="relative min-h-screen bg-black text-white py-32 px-8 overflow-hidden">
+    <section className="relative bg-black text-white pt-20 pb-12 md:pt-24 md:pb-16 px-8 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none" />
@@ -96,7 +96,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-16 md:mb-24 flex justify-between items-end"
+          className="mb-10 md:mb-14 flex justify-between items-end"
         >
           <div>
             <h2 className="text-4xl md:text-6xl font-medium mb-4">Selected Work</h2>

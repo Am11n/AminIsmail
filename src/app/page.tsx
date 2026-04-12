@@ -21,7 +21,7 @@ export default function Home() {
       <Projects />
       
       {/* Footer */}
-      <footer className="bg-black text-white py-12 border-t border-white/10">
+      <footer className="bg-black text-white py-8 md:py-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/40 text-sm">
             © {new Date().getFullYear()} Amin Ismail. All rights reserved. <span className="opacity-0 hover:opacity-100 transition-opacity">🍌</span>
