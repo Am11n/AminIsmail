@@ -17,7 +17,7 @@ const projects: Project[] = [
     id: 1,
     title: "TeqBook",
     category: "SaaS Platform",
-    href: "https://www.teqbook.com",
+    href: "https://teqbook.com",
     isReleased: true,
     description:
       "Multi-tenant booking-SaaS for salonger: pnpm-monorepo med tre Next.js-apper (public, dashboard, admin), Supabase med RLS, Stripe, 2FA og rate limiting, 15 språk, Vitest og Playwright.",
