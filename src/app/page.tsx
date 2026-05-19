@@ -5,6 +5,7 @@ import Certificates from "@/components/Certificates";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Education />
       <Certificates />
       <Projects />
+      <Contact />
       
       {/* Footer */}
       <footer className="bg-black text-white py-8 md:py-10 border-t border-white/10">
