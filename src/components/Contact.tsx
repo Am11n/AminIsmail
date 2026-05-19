@@ -24,9 +24,9 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-10 md:mb-14 text-center md:text-left"
         >
-          <h2 className="text-4xl md:text-6xl font-medium mb-4">Kontakt meg</h2>
+          <h2 className="text-4xl md:text-6xl font-medium mb-4">Contact Me</h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto md:mx-0">
-            Ta gjerne kontakt om du vil snakke om et prosjekt, en stilling eller samarbeid.
+            Feel free to reach out if you&apos;d like to discuss a project, a role, or collaboration.
           </p>
         </motion.div>
 
@@ -48,7 +48,7 @@ export default function Contact() {
               <FaEnvelope className="w-6 h-6" />
             </motion.div>
             <motion.div initial={false} className="min-w-0">
-              <p className="text-sm text-white/50 mb-1">E-post</p>
+              <p className="text-sm text-white/50 mb-1">Email</p>
               <p className="font-medium text-white/90 group-hover:text-white transition-colors break-all">
                 {email}
               </p>
@@ -66,7 +66,7 @@ export default function Contact() {
               <FaPhone className="w-6 h-6" />
             </motion.div>
             <motion.div initial={false} className="min-w-0">
-              <p className="text-sm text-white/50 mb-1">Telefon</p>
+              <p className="text-sm text-white/50 mb-1">Phone</p>
               <p className="font-medium text-white/90 group-hover:text-white transition-colors">
                 {phone}
               </p>
